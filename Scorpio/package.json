@@ -7,15 +7,14 @@
   },
   "license": "MIT",
   "config": {
-    "app-to-debug": "onenote",
-    "app-type-to-debug": "desktop",
-    "dev-server-port": 3000
+    "app_to_debug": "onenote",
+    "app_type_to_debug": "desktop",
+    "dev_server_port": 3000
   },
   "scripts": {
-    "build": "webpack -p --mode production --https false",
-    "build:dev": "webpack --mode development --https false",
-    "build-dev": "webpack --mode development --https false && echo . && echo . && echo . && echo Please use 'build:dev' instead of 'build-dev'.",
-    "dev-server": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "dev-server": "webpack serve --mode development",
     "lint": "office-addin-lint check",
     "lint:fix": "office-addin-lint fix",
     "prettier": "office-addin-lint prettier",
@@ -27,35 +26,39 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "nan": "^2.14.1"
+    "core-js": "^3.9.1",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/polyfill": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@types/find-process": "1.2.0",
-    "@types/office-js": "^1.0.108",
-    "@types/office-runtime": "^1.0.14",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "eslint-config-office-addins": "^1.0.15",
-    "find-process": "^1.4.3",
-    "file-loader": "^4.2.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^4.3.0",
-    "office-addin-cli": "^1.0.10",
-    "office-addin-debugging": "^3.0.31",
-    "office-addin-dev-certs": "^1.5.2",
-    "office-addin-lint": "^1.0.23",
-    "office-addin-manifest": "1.5.0",
-    "office-addin-prettier-config": "^1.0.12",
-    "source-map-loader": "^0.2.4",
-    "ts-loader": "^6.2.2",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/office-js": "^1.0.256",
+    "@types/office-runtime": "^1.0.23",
+    "acorn": "^8.5.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "eslint-plugin-office-addins": "^2.1.4",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "office-addin-cli": "^1.5.4",
+    "office-addin-debugging": "^4.6.7",
+    "office-addin-dev-certs": "^1.11.1",
+    "office-addin-lint": "^2.2.4",
+    "office-addin-manifest": "^1.12.0",
+    "office-addin-prettier-config": "^1.2.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "4.7.4"
   },
-  "prettier": "office-addin-prettier-config"
+  "prettier": "office-addin-prettier-config",
+  "browserslist": [
+    "ie 11"
+  ]
 }
