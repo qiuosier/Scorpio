@@ -2,7 +2,8 @@ Office.onReady(info => {
   if (info.host === Office.HostType.OneNote) {
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
-    document.getElementById("run").onclick = run;
+    document.getElementById("btn-refresh").onclick = run;
+    run();
   }
 });
 
@@ -80,8 +81,8 @@ export async function run() {
             codeBlockStyle: 'fenced'
           })
           var markdown = turndownService.turndown(html_content);
-          // Download the markdown as a file
-          download(page.title + ".md", markdown);
+          // Save the markdown to textarea
+          $("#markdown-editor").val(markdown);
         });
     });
   } catch (error) {
